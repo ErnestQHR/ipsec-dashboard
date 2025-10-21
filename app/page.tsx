@@ -10,22 +10,9 @@ import { Progress } from "@/components/ui/progress"
 import { Badge } from "@/components/ui/badge"
 import { Activity, BarChart3, AlertCircle, TrendingUp } from "lucide-react"
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Legend } from "recharts"
+import { generateDashboardData, generateHistoryData, type DashboardData, type HistoryData } from "@/lib/mock-data"
 
-interface DashboardData {
-  tunnelStatus: "ESTABLISHED" | "DISCONNECTED"
-  throughput: number
-  cpuUsage: number
-  quantumKeyPool: number
-  encryptionAlgo: string
-  authAlgo: string
-  lastSync: string
-}
-
-interface HistoryData {
-  time: string
-  throughput: number
-  cpuUsage: number
-}
+// 类型定义已移至 lib/mock-data.ts
 
 export default function IPSecDashboard() {
   const [data, setData] = useState<DashboardData>({
@@ -45,15 +32,7 @@ export default function IPSecDashboard() {
       setLoading(true)
       try {
         await new Promise((resolve) => setTimeout(resolve, 500))
-        const newData = {
-          tunnelStatus: "ESTABLISHED" as const,
-          throughput: 1.28 + (Math.random() - 0.5) * 0.1,
-          cpuUsage: 14.5 + (Math.random() - 0.5) * 2,
-          quantumKeyPool: Math.floor(Math.random() * 20) + 80,
-          encryptionAlgo: "SM4-CBC",
-          authAlgo: "HMAC-SM3",
-          lastSync: new Date().toISOString(),
-        }
+        const newData = generateDashboardData()
         setData(newData)
 
         setHistoryData((prev) => {
@@ -74,6 +53,8 @@ export default function IPSecDashboard() {
       }
     }
 
+    // 初始化历史数据
+    setHistoryData(generateHistoryData(20))
     fetchDashboardData()
     const interval = setInterval(fetchDashboardData, 5000)
     return () => clearInterval(interval)

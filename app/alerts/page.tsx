@@ -6,16 +6,9 @@ import { Badge } from "@/components/ui/badge"
 import { Input } from "@/components/ui/input"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { AlertCircle, AlertTriangle, Info, CheckCircle, Search, Filter } from "lucide-react"
+import { generateAlerts, type Alert } from "@/lib/mock-data"
 
-interface Alert {
-  id: string
-  level: "critical" | "warning" | "info" | "success"
-  title: string
-  message: string
-  source: string
-  timestamp: string
-  resolved: boolean
-}
+// 类型定义已移至 lib/mock-data.ts
 
 export default function AlertsPage() {
   const [alerts, setAlerts] = useState<Alert[]>([])
@@ -23,54 +16,7 @@ export default function AlertsPage() {
   const [searchTerm, setSearchTerm] = useState("")
 
   useEffect(() => {
-    // 模拟告警数据
-    const mockAlerts: Alert[] = [
-      {
-        id: "1",
-        level: "warning",
-        title: "量子密钥池低于阈值",
-        message: "当前密钥池剩余 18 组，低于 20 组阈值，已触发自动同步",
-        source: "量子密钥管理模块",
-        timestamp: new Date(Date.now() - 300000).toISOString(),
-        resolved: false,
-      },
-      {
-        id: "2",
-        level: "info",
-        title: "IPSec 隧道重新协商",
-        message: "隧道 tunnel-001 完成密钥重协商，使用新的量子密钥",
-        source: "IPSec 管理模块",
-        timestamp: new Date(Date.now() - 600000).toISOString(),
-        resolved: true,
-      },
-      {
-        id: "3",
-        level: "success",
-        title: "硬件加密卡自检通过",
-        message: "USB 加密卡设备 /dev/uacce/0 自检完成，所有功能正常",
-        source: "硬件监控模块",
-        timestamp: new Date(Date.now() - 900000).toISOString(),
-        resolved: true,
-      },
-      {
-        id: "4",
-        level: "critical",
-        title: "QKD 设备连接异常",
-        message: "量子密钥分发设备响应超时，请检查网络连接",
-        source: "QKD 接口模块",
-        timestamp: new Date(Date.now() - 1200000).toISOString(),
-        resolved: false,
-      },
-      {
-        id: "5",
-        level: "warning",
-        title: "CPU 占用率偏高",
-        message: "当前 CPU 占用率达到 45%，建议检查系统负载",
-        source: "性能监控模块",
-        timestamp: new Date(Date.now() - 1500000).toISOString(),
-        resolved: true,
-      },
-    ]
+    const mockAlerts = generateAlerts()
     setAlerts(mockAlerts)
   }, [])
 
