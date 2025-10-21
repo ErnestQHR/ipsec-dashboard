@@ -9,7 +9,7 @@
 
 **基于量子密钥分发与国产密码算法的 IPSec 安全通信监控系统**
 
-[在线演示](https://ipsec-dashboard.vercel.app) • [功能特性](#功能特性) • [技术栈](#技术栈) • [快速开始](#快速开始)
+[🌐 在线演示](https://ernestqhr.github.io/ipsec-dashboard) • [📋 功能特性](#功能特性) • [🛠️ 技术栈](#技术栈) • [🚀 快速开始](#快速开始)
 
 </div>
 
@@ -24,6 +24,36 @@
 - **硬件加速**: 基于华为鲲鹏 920 密码加速器，显著提升性能
 - **实时监控**: 全方位监控 IPSec 隧道状态和系统性能
 - **现代化界面**: 基于 Next.js 15 的响应式 Web 应用
+
+## 🌐 在线演示
+
+### 🚀 立即体验
+**访问地址**: [https://ernestqhr.github.io/ipsec-dashboard](https://ernestqhr.github.io/ipsec-dashboard)
+
+### 🔑 演示账号
+- **用户名**: `admin`
+- **密码**: `admin123`
+
+### 📱 演示功能
+- ✅ **实时监控台**: 查看 IPSec 隧道状态、性能指标
+- ✅ **硬件状态**: 监控加密卡设备状态和健康度
+- ✅ **性能测试**: 硬件加速 vs 软件性能对比
+- ✅ **配置管理**: IPSec 连接和量子密钥配置
+- ✅ **日志系统**: 量子密钥事件日志和审计
+- ✅ **告警中心**: 系统告警监控和管理
+
+### 🎯 演示特色
+- 🔄 **实时数据更新**: 每5秒自动刷新监控数据
+- 📊 **交互式图表**: 支持缩放、悬停查看详细数据
+- 📱 **响应式设计**: 完美适配桌面和移动设备
+- 🎨 **现代化 UI**: 渐变色彩和流畅动画效果
+- 🔒 **安全登录**: 模拟真实的安全认证流程
+
+### 💡 使用提示
+1. 使用演示账号登录系统
+2. 浏览各个功能模块，体验完整工作流程
+3. 查看实时数据更新和图表交互
+4. 测试配置管理和日志查看功能
 
 ## ✨ 功能特性
 
@@ -66,7 +96,23 @@
 - **驱动框架**: UADK v2.6
 - **IPSec 实现**: strongSwan 5.9.8
 
+### 部署技术
+- **静态托管**: GitHub Pages
+- **CI/CD**: GitHub Actions
+- **构建工具**: Next.js Static Export
+- **CDN**: GitHub Pages CDN
+- **域名**: ernestqhr.github.io
+
 ## 🚀 快速开始
+
+### 🌐 在线体验（推荐）
+
+**无需安装，立即体验**：
+1. 访问 [在线演示](https://ernestqhr.github.io/ipsec-dashboard)
+2. 使用账号 `admin` / `admin123` 登录
+3. 浏览各个功能模块，体验完整功能
+
+### 💻 本地开发
 
 ### 环境要求
 
@@ -128,20 +174,43 @@ ipsec-dashboard/
 
 ## 🎨 界面预览
 
-### 主监控台
-- 实时 IPSec 隧道状态监控
-- 性能指标可视化展示
-- 量子密钥池状态管理
+> 💡 **提示**: 访问 [在线演示](https://ernestqhr.github.io/ipsec-dashboard) 查看完整的交互式界面
 
-### 硬件状态
-- 加密卡设备信息
-- 温度、功耗实时监控
-- 密码运算统计
+### 🖥️ 主监控台
+- **实时数据**: IPSec 隧道状态、吞吐量、CPU 使用率
+- **可视化图表**: 性能趋势图、实时数据更新
+- **量子密钥池**: 密钥数量、同步状态、阈值告警
+- **系统架构**: 组件状态展示、健康度监控
 
-### 性能测试
-- 硬件 vs 软件性能对比
-- 不同数据包大小延迟测试
-- 详细性能分析报告
+### 🔧 硬件状态
+- **设备信息**: 华为鲲鹏 920 加密卡详情
+- **环境监控**: 温度、功耗、运行时间
+- **性能统计**: 加密/解密操作计数
+- **算法支持**: 国密算法列表和状态
+
+### 📊 性能测试
+- **对比分析**: 硬件加速 vs 纯软件实现
+- **延迟测试**: 不同数据包大小的处理时间
+- **吞吐量测试**: 峰值性能基准测试
+- **环境信息**: 测试平台和配置详情
+
+### ⚙️ 配置管理
+- **网络配置**: 本地/远端网关设置
+- **算法选择**: 国密算法配置
+- **QKD 集成**: 量子密钥分发设置
+- **高级选项**: 密钥更新、DPD 检测
+
+### 📋 日志系统
+- **事件监控**: 密钥同步、消耗、过期事件
+- **数据筛选**: 按类型、状态、时间筛选
+- **导出功能**: CSV 格式数据导出
+- **统计分析**: 事件统计和趋势分析
+
+### 🚨 告警中心
+- **多级告警**: 严重、警告、信息、成功
+- **实时监控**: 系统健康状态监控
+- **告警管理**: 搜索、筛选、状态跟踪
+- **历史记录**: 告警历史和解决状态
 
 ## 🔧 开发指南
 
@@ -221,16 +290,29 @@ pnpm lint
 
 ## 📞 联系我们
 
-- **项目维护者**: [Your Name](https://github.com/your-username)
-- **邮箱**: your.email@example.com
-- **项目地址**: [https://github.com/your-username/ipsec-dashboard](https://github.com/your-username/ipsec-dashboard)
+- **项目维护者**: [ErnestQIU](https://github.com/ErnestQHR)
+- **邮箱**: haoranqiu66@gmail.com
+- **项目地址**: [https://github.com/ErnestQHR/ipsec-dashboard](https://github.com/ErnestQHR/ipsec-dashboard)
+- **在线演示**: [https://ernestqhr.github.io/ipsec-dashboard](https://ernestqhr.github.io/ipsec-dashboard)
 
 ## 📈 项目状态
 
-![GitHub stars](https://img.shields.io/github/stars/your-username/ipsec-dashboard?style=social)
-![GitHub forks](https://img.shields.io/github/forks/your-username/ipsec-dashboard?style=social)
-![GitHub issues](https://img.shields.io/github/issues/your-username/ipsec-dashboard)
-![GitHub pull requests](https://img.shields.io/github/issues-pr/your-username/ipsec-dashboard)
+### 🚀 部署状态
+[![Deploy to GitHub Pages](https://github.com/ErnestQHR/ipsec-dashboard/actions/workflows/deploy.yml/badge.svg)](https://github.com/ErnestQHR/ipsec-dashboard/actions/workflows/deploy.yml)
+[![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Live-brightgreen)](https://ernestqhr.github.io/ipsec-dashboard)
+[![Website](https://img.shields.io/website?url=https%3A%2F%2Fernestqhr.github.io%2Fipsec-dashboard)](https://ernestqhr.github.io/ipsec-dashboard)
+
+### 📊 项目统计
+![GitHub stars](https://img.shields.io/github/stars/ErnestQHR/ipsec-dashboard?style=social)
+![GitHub forks](https://img.shields.io/github/forks/ErnestQHR/ipsec-dashboard?style=social)
+![GitHub issues](https://img.shields.io/github/issues/ErnestQHR/ipsec-dashboard)
+![GitHub pull requests](https://img.shields.io/github/issues-pr/ErnestQHR/ipsec-dashboard)
+
+### 🔧 技术状态
+![Next.js](https://img.shields.io/badge/Next.js-15-black?logo=next.js)
+![React](https://img.shields.io/badge/React-19-blue?logo=react)
+![TypeScript](https://img.shields.io/badge/TypeScript-5-blue?logo=typescript)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4.x-38B2AC?logo=tailwind-css)
 
 ---
 
@@ -238,6 +320,6 @@ pnpm lint
 
 **⭐ 如果这个项目对你有帮助，请给我们一个 Star！**
 
-Made with ❤️ by [Your Name](https://github.com/your-username)
+Made with ❤️ by [ErnestQIU](https://github.com/ErnestQHR)
 
 </div>
